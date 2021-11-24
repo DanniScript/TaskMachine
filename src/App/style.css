@@ -1,0 +1,18 @@
+#root {
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  transition: max-width 350ms;
+}
+
+@media (min-width: 600px) {
+  #root {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 900px) {
+  #root {
+    max-width: 600px;
+  }
+}
