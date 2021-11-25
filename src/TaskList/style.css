@@ -1,0 +1,7 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-right: var(--task-lateral-gap);
+  padding-left: var(--task-lateral-gap);
+}

@@ -3,13 +3,13 @@ header {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  height: 160px;
+  height: 120px;
 }
 
 header > img {
-  height: 52px;
+  height: 44px;
 }
 
 header > h1 {
-  font-size: 1.9rem;
+  font-size: 1.6rem;
 }

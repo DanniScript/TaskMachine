@@ -2,9 +2,9 @@ import './style.css'
 
 function Header() {
   return (
-    <header>
+    <header className="prevent-select">
       <img draggable="false" src="./logo.svg" alt="TaskMachine logo" />
-      <h1 className="prevent-select">TaskMachine</h1>
+      <h1>TaskMachine</h1>
     </header>
   )
 }

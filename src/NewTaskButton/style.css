@@ -1,0 +1,25 @@
+.new-task-button {
+  display: grid;
+  align-items: center;
+  max-width: 400px;
+  height: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--task-lateral-gap);
+  padding-left: var(--task-lateral-gap);
+}
+
+.new-task-button > button {
+  display: block;
+  justify-self: stretch;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-font-light);
+  background-color: hsl(200, 40%, 26%);
+  border: none;
+  border-radius: var(--task-border-radius);
+}
+
