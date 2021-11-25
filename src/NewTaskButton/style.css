@@ -1,19 +1,40 @@
-.new-task-button {
-  display: grid;
-  align-items: center;
-  max-width: 400px;
-  height: 100px;
+.new-task-button__container {
   margin-right: auto;
   margin-left: auto;
+  width: 340px;
+  height: 120px;
+}
+
+@media (min-width: 600px) {
+  .new-task-button__container {
+    width: 500px;
+  }
+}
+
+@media (min-width: 900px) {
+  .new-task-button__container {
+    width: 600px;
+  }
+}
+
+.new-task-button {
+  position: fixed;
+  bottom: 0px;
+  display: grid;
+  place-items: center;
+  width: inherit;
+  height: inherit;
   padding-right: var(--task-lateral-gap);
   padding-left: var(--task-lateral-gap);
+  /* background-color: var(--color-background); */
+  
 }
 
 .new-task-button > button {
   display: block;
   justify-self: stretch;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   font-family: inherit;
   font-size: 1.25rem;
   font-weight: bold;
