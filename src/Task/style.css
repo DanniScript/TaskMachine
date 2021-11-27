@@ -6,6 +6,20 @@
   color: var(--color-font-dark);
   background-color: var(--color-font-light);
   border-radius: var(--task-border-radius);
+  overflow: hidden;
+}
+
+.task.completed {
+  opacity: 0.7;
+  text-decoration-line: line-through;
+}
+
+.task .check {
+  display: none;
+}
+
+.task.completed .check {
+  display: inline;
 }
 
 .task__checkbox-icon,
@@ -14,6 +28,7 @@
   place-items: center;
   height: 100%;
   aspect-ratio: 1;
+  cursor: pointer;
 }
 
 .task__trash-icon {
