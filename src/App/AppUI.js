@@ -9,7 +9,7 @@ import { NewTaskButton } from '../NewTaskButton'
 import './style.css'
 
 function AppUI() {
-  const { tasks } = useContext(AppContext)
+  const { searchedTasks, onComplete, onDelete } = useContext(AppContext)
 
   return (
     <React.Fragment>
@@ -17,11 +17,13 @@ function AppUI() {
       <SearchBar />
       <span className="divider"></span>
       <TaskList>
-        {tasks.map(task => (
+        {searchedTasks.map(task => (
           <Task 
             key={task.id}
             text={task.text}
             completed={task.completed}
+            onComplete={() => onComplete(task.id)}
+            onDelete={() => onDelete(task.id)}
           />
         ))}
       </TaskList>

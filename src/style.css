@@ -57,6 +57,10 @@ body {
   fill: var(--color-font-dark)
 }
 
+.fill-dark-soft {
+  fill: var(--color-font-dark-soft)
+}
+
 .divider {
   display: block;
   height: 3px;
