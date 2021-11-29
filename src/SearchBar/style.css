@@ -20,26 +20,7 @@
 }
 
 .searchbar__input {
-  height: var(--task-height);
-  padding-right: 1rem;
   padding-left: 3rem;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--color-font-dark);
-  background-color: var(--color-font-light);
-  border: none;
-  border-radius: var(--task-border-radius);
-  transition: background-color 350ms;
-}
-
-.searchbar__input::placeholder {
-  color: var(--color-font-dark-soft);
-}
-
-.searchbar__input:focus {
-  background-color: white;
-  outline: none;
 }
 
 .searchbar > span {

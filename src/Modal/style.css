@@ -1,0 +1,10 @@
+.modal-background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}

@@ -1,6 +1,8 @@
 /* Variables */
 :root {
   --color-background: hsl(200, 40%, 40%);
+  --color-primary: hsl(200, 40%, 40%);
+  --color-primary-dark: hsl(200, 40%, 26%);
   --color-font-light: hsl(0, 0%, 90%);
   --color-font-dark: hsl(0, 0%, 22%);
     --color-font-dark-soft: hsl(0, 0%, 40%);
@@ -35,7 +37,36 @@ body {
   background-color: var(--color-background);
 }
 
+input {
+  height: var(--task-height);
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-font-dark);
+  background-color: var(--color-font-light);
+  border: none;
+  border-radius: var(--task-border-radius);
+  transition: background-color 350ms;
+}
+input::placeholder {
+  color: var(--color-font-dark-soft);
+}
+input:focus {
+  background-color: white;
+  outline: none;
+}
 
+button {
+  padding: 0.75rem 0.7rem;
+  font-family: inherit;
+  font-weight: bold;
+  color: var(--color-font-light);
+  background-color: var(--color-primary-dark);
+  border: none;
+  border-radius: var(--task-border-radius);
+}
 
 
 
@@ -68,4 +99,26 @@ body {
   background-color: var(--color-font-light);
   opacity: 0.5;
   border-radius: 1.5px;
+}
+
+.sub-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 260px;
+  transition: width 350ms;
+}
+@media (min-width: 336px) {
+  .sub-container {
+    width: 320px;
+  }
+}
+@media (min-width: 600px) {
+  .sub-container {
+    width: 400px;
+  }
+}
+@media (min-width: 900px) {
+  .sub-container {
+    width: 500px;
+  }
 }

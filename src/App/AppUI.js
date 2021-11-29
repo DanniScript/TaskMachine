@@ -5,11 +5,19 @@ import { SearchBar } from '../SearchBar'
 import { TaskList } from '../TaskList'
 import { Task } from '../Task'
 import { NewTaskButton } from '../NewTaskButton'
+import { Modal } from '../Modal'
+import { Form } from '../Form'
 
 import './style.css'
 
 function AppUI() {
-  const { searchedTasks, onComplete, onDelete } = useContext(AppContext)
+  const { 
+    searchedTasks, 
+    onComplete, 
+    onDelete,
+    openModal,
+    setOpenModal
+  } = useContext(AppContext)
 
   return (
     <React.Fragment>
@@ -27,7 +35,12 @@ function AppUI() {
           />
         ))}
       </TaskList>
-      <NewTaskButton />
+      <NewTaskButton setOpenModal={setOpenModal} />
+      {openModal && (
+        <Modal>
+          <Form />
+        </Modal>
+      )}
     </React.Fragment>
   )
 }

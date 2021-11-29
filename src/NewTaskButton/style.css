@@ -1,27 +1,5 @@
 .new-task-button__container {
-  margin-right: auto;
-  margin-left: auto;
-  width: 200px;
   height: 120px;
-  transition: width 350ms;
-}
-
-@media (min-width: 336px) {
-  .new-task-button__container {
-    width: 320px;
-  }
-}
-
-@media (min-width: 600px) {
-  .new-task-button__container {
-    width: 400px;
-  }
-}
-
-@media (min-width: 900px) {
-  .new-task-button__container {
-    width: 500px;
-  }
 }
 
 .new-task-button {
@@ -41,12 +19,6 @@
   justify-self: stretch;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  font-family: inherit;
   font-size: 1.15rem;
-  font-weight: bold;
-  color: var(--color-font-light);
-  background-color: hsl(200, 40%, 26%);
-  border: none;
-  border-radius: var(--task-border-radius);
 }
 

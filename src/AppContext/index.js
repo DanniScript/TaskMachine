@@ -47,17 +47,19 @@ function AppProvider(props) {
     setTasks(newTasks)
   }
 
+  /* Add Tasks */
+  const [openModal, setOpenModal] = React.useState(false)
 
   return (
     <AppContext.Provider value={{
       searchedTasks,
       searchIconClass,
-      search,
-      setSearch,
+      search, setSearch,
       tasksAmount,
       completedTasksAmount,
       onComplete,
-      onDelete
+      onDelete,
+      openModal, setOpenModal
     }}>
       {props.children}
     </AppContext.Provider>
