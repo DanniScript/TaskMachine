@@ -1,6 +1,6 @@
 import './style.css'
 
-function TaskList(props) {
+function TasksList(props) {
   return (
     <div className="task-list">
       {props.children}
@@ -8,4 +8,8 @@ function TaskList(props) {
   )
 }
 
-export { TaskList }
+function TasksListError() {
+  return <p>Error, reload the page</p>
+}
+
+export { TasksList, TasksListError }

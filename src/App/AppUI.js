@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { AppContext } from '../AppContext'
 import { Header } from '../Header'
 import { SearchBar } from '../SearchBar'
-import { TaskList } from '../TaskList'
+import { TasksList, TasksListError } from '../TaskList'
 import { Task } from '../Task'
 import { NewTaskButton } from '../NewTaskButton'
 import { Modal } from '../Modal'
@@ -12,6 +12,7 @@ import './style.css'
 
 function AppUI() {
   const { 
+    error,
     searchedTasks, 
     onComplete, 
     onDelete,
@@ -24,7 +25,8 @@ function AppUI() {
       <Header />
       <SearchBar />
       <span className="divider"></span>
-      <TaskList>
+      <TasksList>
+        {error && <TasksListError />}
         {searchedTasks.map(task => (
           <Task 
             key={task.id}
@@ -34,7 +36,7 @@ function AppUI() {
             onDelete={() => onDelete(task.id)}
           />
         ))}
-      </TaskList>
+      </TasksList>
       <NewTaskButton setOpenModal={setOpenModal} />
       {openModal && (
         <Modal>

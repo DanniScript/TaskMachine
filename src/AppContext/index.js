@@ -1,16 +1,26 @@
 import React from 'react'
+import { useLocalStorage } from './useLocalStorage'
 
 const AppContext = React.createContext()
 
 function AppProvider(props) {
 
   /* Setup */
-  const [tasks, setTasks] = React.useState([
+
+  const defaultTasks = [
     {id: '1', text: 'Exercise', completed: false},
     {id: '2', text: 'Study React.js', completed: true},
     {id: '3', text: 'Walking the dog', completed: true},
     {id: '4', text: 'Shopping', completed: false}
-  ]) 
+  ]
+
+  const {
+    items: tasks,
+    saveItems: saveTasks,
+    loading, 
+    error
+  } = useLocalStorage('TASKS_V1', defaultTasks)
+  
 
   /* Searchbar */
   const [search, setSearch] = React.useState('')
@@ -38,17 +48,27 @@ function AppProvider(props) {
     } else {
       newTasks[taskIndex].completed = true
     }
-    setTasks(newTasks)
+    saveTasks(newTasks)
   }
   const onDelete = (id) => {
     const taskIndex = tasks.findIndex(task => task.id === id)
     const newTasks = [...tasks]
     newTasks.splice(taskIndex, 1)
-    setTasks(newTasks)
+    saveTasks(newTasks)
   }
 
   /* Add Tasks */
   const [openModal, setOpenModal] = React.useState(false)
+  function newTask(text) {
+    const id = parseInt(tasks[tasks.length - 1].id) + 1
+    const obj = {
+      id: id.toString(),
+      text: text,
+      completed: false
+    }
+    tasks.push(obj)
+    saveTasks(tasks)
+  }
 
   return (
     <AppContext.Provider value={{
@@ -59,7 +79,10 @@ function AppProvider(props) {
       completedTasksAmount,
       onComplete,
       onDelete,
-      openModal, setOpenModal
+      openModal, setOpenModal,
+      newTask,
+      loading, 
+      error
     }}>
       {props.children}
     </AppContext.Provider>
